@@ -1,6 +1,7 @@
 
 module.exports = (sequelize, DataTypes) => {
   const Products = sequelize.define('Products', {
+    orderId: DataTypes.INTEGER,
     title: DataTypes.STRING,
     code: DataTypes.STRING,
     count: DataTypes.INTEGER,
@@ -10,7 +11,6 @@ module.exports = (sequelize, DataTypes) => {
     additionalPrice: DataTypes.DOUBLE,
     totalPrice: DataTypes.DOUBLE,
     status: DataTypes.STRING,
-    trackNumber: DataTypes.STRING,
   }, {});
   return Products;
 };

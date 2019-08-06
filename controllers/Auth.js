@@ -41,7 +41,6 @@ class Auth {
     }
 
     const user = await models.Users.findOne({ where: { email: req.body.email } });
-
     if (!user) {
       res.status(400).send('Incrroect email or password');
       return;
@@ -53,8 +52,7 @@ class Auth {
       return;
     }
 
-    const token = jwt.sign({ id: user.id }, process.env.SECRET);
-
+    const token = jwt.sign({ id: user.id }, process.env.SECRET, { expiresIn: '8h' });
     res.header('auth-token', token).send(token);
   }
 }

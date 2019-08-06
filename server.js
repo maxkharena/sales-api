@@ -18,4 +18,5 @@ app.use('/user', authRouter);
 app.use('/products', auth, productRouter);
 
 
+// eslint-disable-next-line no-console
 app.listen(process.env.PORT, () => console.log(`Server runing on ${process.env.PORT} port`));
