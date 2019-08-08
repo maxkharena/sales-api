@@ -2,14 +2,12 @@ const models = require('../models');
 const { productDataValidate } = require('../helpers/validations/product');
 
 class Products {
-  static async getList(req, res) {
-    const products = await models.Products.findAll();
-    res.send(products);
+  static async getList(_, res) {
+    res.send(await models.Products.findAll());
   }
 
   static async getProduct(req, res) {
-    const product = await models.Products.findOne({ where: { id: req.body.id } });
-    res.send(product);
+    res.send(await models.Products.findOne({ where: { id: req.body.id } }));
   }
 
   static async createProduct(req, res) {
