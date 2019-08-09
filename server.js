@@ -8,14 +8,16 @@ const app = express();
 
 // Routes
 const authRouter = require('./routes/auth');
-const productRouter = require('./routes/products');
+const productsRouter = require('./routes/products');
+const ordersRouter = require('./routes/orders');
 
 // Midleware
 app.use(express.json());
 
 // Routes middlewares
 app.use('/user', authRouter);
-app.use('/products', auth, productRouter);
+app.use('/products', auth, productsRouter);
+app.use('/orders', auth, ordersRouter);
 
 
 // eslint-disable-next-line no-console
