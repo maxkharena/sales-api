@@ -2,8 +2,8 @@ const router = require('express').Router();
 const OrdersController = require('../controllers/Orders');
 
 router.get('/list', OrdersController.getList);
-router.get('/order', OrdersController.getOrder);
-router.post('/order', OrdersController.createOrder);
-// router.put('/product', ProductsController.updateProduct);
+router.get('/info', OrdersController.getOrder);
+router.post('/create', OrdersController.createOrder);
+router.put('/update', OrdersController.updateOrder);
 
 module.exports = router;

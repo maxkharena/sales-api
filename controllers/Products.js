@@ -7,7 +7,7 @@ class Products {
   }
 
   static async getProduct(req, res) {
-    res.send(await models.Products.findOne({ where: { id: req.body.id } }));
+    res.send(await models.Products.findOne({ where: { id: req.query.id } }));
   }
 
   static async createProduct(req, res) {
